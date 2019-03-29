@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block title %}Lista zgłoszeń{% endblock %}
+
+{% block content %}
+
+  {% if tickets %}
+    <table class="table table-bordered table-hover">
+        <thead>
+            <th>ID Zgłoszenia</th><th>Status</th><th>Data zgłoszenia</th><th>Użytkownik</th>
+        </thead>
+        {% for tick in tickets %}
+        <tr class='clickable-row' data-href='/tickets/{{ tick.id }}'>
+            <td>{{ tick.id }}</td><td>{{ tick.status }}</td><td>{{ tick.data_utworzenia }}</td><td>{{ tick.uzytkownik }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+  {% else %}
+    <p>Brak zgłoszeń</p>
+  {% endif %} 
+{% endblock %}

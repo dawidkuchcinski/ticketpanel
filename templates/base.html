@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+{% load bootstrap4 %}
+{% load staticfiles %}
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>{% block title %}Django Auth Tutorial{% endblock %}</title>
+    {% bootstrap_css %}
+    {% bootstrap_javascript jquery='full' %}
+  <link rel="stylesheet" href="{% static "css/style.css" %}" />
+  <link href="https://fonts.googleapis.com/css?family=Josefin+Sans:400i,700i" rel="stylesheet"> 
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+  <script src="//netdna.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+  <script>
+  </script>
+</head>
+<body class="bg-light">
+  <nav class="navbar navbar-dark bg-primary fixed-top p-0 navbar-expand-lg">
+    <div class="container p-0">
+      <span class="navbar-brand block pt-3 pl-1 pb-3 mr-auto" style="font-family: 'Josefin Sans', sans-serif;">
+        <span class="font-weight-bold h3">MTJ</span><span class="p-0 m-0">Electronics</span>
+      </span>
+    </div>
+  </nav>
+  <main class="container pt-5">
+    {% block content %}
+    {% endblock %}
+  </main>
+</body>
+</html>
